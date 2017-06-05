@@ -1,0 +1,568 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		713478661EE2A1CA0072BD4A /* WZZMotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 713478651EE2A1CA0072BD4A /* WZZMotionManager.m */; };
+		71C99A2E1EE2931000CA476E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C99A2D1EE2931000CA476E /* main.m */; };
+		71C99A311EE2931000CA476E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C99A301EE2931000CA476E /* AppDelegate.m */; };
+		71C99A341EE2931000CA476E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C99A331EE2931000CA476E /* ViewController.m */; };
+		71C99A371EE2931000CA476E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71C99A351EE2931000CA476E /* Main.storyboard */; };
+		71C99A391EE2931000CA476E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71C99A381EE2931000CA476E /* Assets.xcassets */; };
+		71C99A3C1EE2931000CA476E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71C99A3A1EE2931000CA476E /* LaunchScreen.storyboard */; };
+		71C99A471EE2931100CA476E /* WZZSwordRemoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C99A461EE2931100CA476E /* WZZSwordRemoteTests.m */; };
+		71C99A521EE2931100CA476E /* WZZSwordRemoteUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C99A511EE2931100CA476E /* WZZSwordRemoteUITests.m */; };
+		71C99A641EE2934100CA476E /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C99A611EE2934100CA476E /* AsyncSocket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		71C99A651EE2934100CA476E /* WZZSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C99A631EE2934100CA476E /* WZZSocketManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		71C99A431EE2931100CA476E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 71C99A211EE2931000CA476E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 71C99A281EE2931000CA476E;
+			remoteInfo = WZZSwordRemote;
+		};
+		71C99A4E1EE2931100CA476E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 71C99A211EE2931000CA476E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 71C99A281EE2931000CA476E;
+			remoteInfo = WZZSwordRemote;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		713478641EE2A1CA0072BD4A /* WZZMotionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZZMotionManager.h; sourceTree = "<group>"; };
+		713478651EE2A1CA0072BD4A /* WZZMotionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZZMotionManager.m; sourceTree = "<group>"; };
+		71C99A291EE2931000CA476E /* WZZSwordRemote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WZZSwordRemote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		71C99A2D1EE2931000CA476E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		71C99A2F1EE2931000CA476E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		71C99A301EE2931000CA476E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		71C99A321EE2931000CA476E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		71C99A331EE2931000CA476E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		71C99A361EE2931000CA476E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		71C99A381EE2931000CA476E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		71C99A3B1EE2931000CA476E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		71C99A3D1EE2931000CA476E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71C99A421EE2931100CA476E /* WZZSwordRemoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WZZSwordRemoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		71C99A461EE2931100CA476E /* WZZSwordRemoteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZZSwordRemoteTests.m; sourceTree = "<group>"; };
+		71C99A481EE2931100CA476E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71C99A4D1EE2931100CA476E /* WZZSwordRemoteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WZZSwordRemoteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		71C99A511EE2931100CA476E /* WZZSwordRemoteUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZZSwordRemoteUITests.m; sourceTree = "<group>"; };
+		71C99A531EE2931100CA476E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71C99A601EE2934100CA476E /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
+		71C99A611EE2934100CA476E /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
+		71C99A621EE2934100CA476E /* WZZSocketManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZZSocketManager.h; sourceTree = "<group>"; };
+		71C99A631EE2934100CA476E /* WZZSocketManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZZSocketManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		71C99A261EE2931000CA476E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71C99A3F1EE2931100CA476E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71C99A4A1EE2931100CA476E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		713478631EE2A1CA0072BD4A /* MotionTool */ = {
+			isa = PBXGroup;
+			children = (
+				713478641EE2A1CA0072BD4A /* WZZMotionManager.h */,
+				713478651EE2A1CA0072BD4A /* WZZMotionManager.m */,
+			);
+			path = MotionTool;
+			sourceTree = "<group>";
+		};
+		71C99A201EE2931000CA476E = {
+			isa = PBXGroup;
+			children = (
+				713478631EE2A1CA0072BD4A /* MotionTool */,
+				71C99A5F1EE2934100CA476E /* SocketTool */,
+				71C99A2B1EE2931000CA476E /* WZZSwordRemote */,
+				71C99A451EE2931100CA476E /* WZZSwordRemoteTests */,
+				71C99A501EE2931100CA476E /* WZZSwordRemoteUITests */,
+				71C99A2A1EE2931000CA476E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		71C99A2A1EE2931000CA476E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				71C99A291EE2931000CA476E /* WZZSwordRemote.app */,
+				71C99A421EE2931100CA476E /* WZZSwordRemoteTests.xctest */,
+				71C99A4D1EE2931100CA476E /* WZZSwordRemoteUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		71C99A2B1EE2931000CA476E /* WZZSwordRemote */ = {
+			isa = PBXGroup;
+			children = (
+				71C99A2F1EE2931000CA476E /* AppDelegate.h */,
+				71C99A301EE2931000CA476E /* AppDelegate.m */,
+				71C99A321EE2931000CA476E /* ViewController.h */,
+				71C99A331EE2931000CA476E /* ViewController.m */,
+				71C99A351EE2931000CA476E /* Main.storyboard */,
+				71C99A381EE2931000CA476E /* Assets.xcassets */,
+				71C99A3A1EE2931000CA476E /* LaunchScreen.storyboard */,
+				71C99A3D1EE2931000CA476E /* Info.plist */,
+				71C99A2C1EE2931000CA476E /* Supporting Files */,
+			);
+			path = WZZSwordRemote;
+			sourceTree = "<group>";
+		};
+		71C99A2C1EE2931000CA476E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				71C99A2D1EE2931000CA476E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		71C99A451EE2931100CA476E /* WZZSwordRemoteTests */ = {
+			isa = PBXGroup;
+			children = (
+				71C99A461EE2931100CA476E /* WZZSwordRemoteTests.m */,
+				71C99A481EE2931100CA476E /* Info.plist */,
+			);
+			path = WZZSwordRemoteTests;
+			sourceTree = "<group>";
+		};
+		71C99A501EE2931100CA476E /* WZZSwordRemoteUITests */ = {
+			isa = PBXGroup;
+			children = (
+				71C99A511EE2931100CA476E /* WZZSwordRemoteUITests.m */,
+				71C99A531EE2931100CA476E /* Info.plist */,
+			);
+			path = WZZSwordRemoteUITests;
+			sourceTree = "<group>";
+		};
+		71C99A5F1EE2934100CA476E /* SocketTool */ = {
+			isa = PBXGroup;
+			children = (
+				71C99A601EE2934100CA476E /* AsyncSocket.h */,
+				71C99A611EE2934100CA476E /* AsyncSocket.m */,
+				71C99A621EE2934100CA476E /* WZZSocketManager.h */,
+				71C99A631EE2934100CA476E /* WZZSocketManager.m */,
+			);
+			path = SocketTool;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		71C99A281EE2931000CA476E /* WZZSwordRemote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71C99A561EE2931100CA476E /* Build configuration list for PBXNativeTarget "WZZSwordRemote" */;
+			buildPhases = (
+				71C99A251EE2931000CA476E /* Sources */,
+				71C99A261EE2931000CA476E /* Frameworks */,
+				71C99A271EE2931000CA476E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WZZSwordRemote;
+			productName = WZZSwordRemote;
+			productReference = 71C99A291EE2931000CA476E /* WZZSwordRemote.app */;
+			productType = "com.apple.product-type.application";
+		};
+		71C99A411EE2931100CA476E /* WZZSwordRemoteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71C99A591EE2931100CA476E /* Build configuration list for PBXNativeTarget "WZZSwordRemoteTests" */;
+			buildPhases = (
+				71C99A3E1EE2931100CA476E /* Sources */,
+				71C99A3F1EE2931100CA476E /* Frameworks */,
+				71C99A401EE2931100CA476E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				71C99A441EE2931100CA476E /* PBXTargetDependency */,
+			);
+			name = WZZSwordRemoteTests;
+			productName = WZZSwordRemoteTests;
+			productReference = 71C99A421EE2931100CA476E /* WZZSwordRemoteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		71C99A4C1EE2931100CA476E /* WZZSwordRemoteUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71C99A5C1EE2931100CA476E /* Build configuration list for PBXNativeTarget "WZZSwordRemoteUITests" */;
+			buildPhases = (
+				71C99A491EE2931100CA476E /* Sources */,
+				71C99A4A1EE2931100CA476E /* Frameworks */,
+				71C99A4B1EE2931100CA476E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				71C99A4F1EE2931100CA476E /* PBXTargetDependency */,
+			);
+			name = WZZSwordRemoteUITests;
+			productName = WZZSwordRemoteUITests;
+			productReference = 71C99A4D1EE2931100CA476E /* WZZSwordRemoteUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		71C99A211EE2931000CA476E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = wzz;
+				TargetAttributes = {
+					71C99A281EE2931000CA476E = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = L3EKEXQ8PC;
+						ProvisioningStyle = Automatic;
+					};
+					71C99A411EE2931100CA476E = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 71C99A281EE2931000CA476E;
+					};
+					71C99A4C1EE2931100CA476E = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 71C99A281EE2931000CA476E;
+					};
+				};
+			};
+			buildConfigurationList = 71C99A241EE2931000CA476E /* Build configuration list for PBXProject "WZZSwordRemote" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 71C99A201EE2931000CA476E;
+			productRefGroup = 71C99A2A1EE2931000CA476E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				71C99A281EE2931000CA476E /* WZZSwordRemote */,
+				71C99A411EE2931100CA476E /* WZZSwordRemoteTests */,
+				71C99A4C1EE2931100CA476E /* WZZSwordRemoteUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		71C99A271EE2931000CA476E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71C99A3C1EE2931000CA476E /* LaunchScreen.storyboard in Resources */,
+				71C99A391EE2931000CA476E /* Assets.xcassets in Resources */,
+				71C99A371EE2931000CA476E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71C99A401EE2931100CA476E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71C99A4B1EE2931100CA476E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		71C99A251EE2931000CA476E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71C99A341EE2931000CA476E /* ViewController.m in Sources */,
+				71C99A311EE2931000CA476E /* AppDelegate.m in Sources */,
+				71C99A2E1EE2931000CA476E /* main.m in Sources */,
+				71C99A641EE2934100CA476E /* AsyncSocket.m in Sources */,
+				71C99A651EE2934100CA476E /* WZZSocketManager.m in Sources */,
+				713478661EE2A1CA0072BD4A /* WZZMotionManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71C99A3E1EE2931100CA476E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71C99A471EE2931100CA476E /* WZZSwordRemoteTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71C99A491EE2931100CA476E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71C99A521EE2931100CA476E /* WZZSwordRemoteUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		71C99A441EE2931100CA476E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 71C99A281EE2931000CA476E /* WZZSwordRemote */;
+			targetProxy = 71C99A431EE2931100CA476E /* PBXContainerItemProxy */;
+		};
+		71C99A4F1EE2931100CA476E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 71C99A281EE2931000CA476E /* WZZSwordRemote */;
+			targetProxy = 71C99A4E1EE2931100CA476E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		71C99A351EE2931000CA476E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				71C99A361EE2931000CA476E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		71C99A3A1EE2931000CA476E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				71C99A3B1EE2931000CA476E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		71C99A541EE2931100CA476E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		71C99A551EE2931100CA476E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		71C99A571EE2931100CA476E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = L3EKEXQ8PC;
+				INFOPLIST_FILE = WZZSwordRemote/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wzz.WZZSwordRemote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		71C99A581EE2931100CA476E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = L3EKEXQ8PC;
+				INFOPLIST_FILE = WZZSwordRemote/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wzz.WZZSwordRemote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		71C99A5A1EE2931100CA476E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WZZSwordRemoteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wzz.WZZSwordRemoteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WZZSwordRemote.app/WZZSwordRemote";
+			};
+			name = Debug;
+		};
+		71C99A5B1EE2931100CA476E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WZZSwordRemoteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wzz.WZZSwordRemoteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WZZSwordRemote.app/WZZSwordRemote";
+			};
+			name = Release;
+		};
+		71C99A5D1EE2931100CA476E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WZZSwordRemoteUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wzz.WZZSwordRemoteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WZZSwordRemote;
+			};
+			name = Debug;
+		};
+		71C99A5E1EE2931100CA476E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WZZSwordRemoteUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wzz.WZZSwordRemoteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WZZSwordRemote;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		71C99A241EE2931000CA476E /* Build configuration list for PBXProject "WZZSwordRemote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71C99A541EE2931100CA476E /* Debug */,
+				71C99A551EE2931100CA476E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71C99A561EE2931100CA476E /* Build configuration list for PBXNativeTarget "WZZSwordRemote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71C99A571EE2931100CA476E /* Debug */,
+				71C99A581EE2931100CA476E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71C99A591EE2931100CA476E /* Build configuration list for PBXNativeTarget "WZZSwordRemoteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71C99A5A1EE2931100CA476E /* Debug */,
+				71C99A5B1EE2931100CA476E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71C99A5C1EE2931100CA476E /* Build configuration list for PBXNativeTarget "WZZSwordRemoteUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71C99A5D1EE2931100CA476E /* Debug */,
+				71C99A5E1EE2931100CA476E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 71C99A211EE2931000CA476E /* Project object */;
+}
