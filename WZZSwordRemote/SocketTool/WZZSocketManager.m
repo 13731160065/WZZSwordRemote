@@ -31,6 +31,7 @@ static WZZSocketServerManager *_sinstance;
         _sinstance = [[WZZSocketServerManager alloc] init];
     }
     
+    _sinstance->_severUdpSocket = [[AsyncUdpSocket alloc] initWithDelegate:_sinstance];
     _sinstance->_serverSocket = [[AsyncSocket alloc] initWithDelegate:_sinstance];
     
     return _sinstance;
@@ -104,6 +105,7 @@ static WZZSocketClientManager *_cinstance;
         _cinstance = [[WZZSocketClientManager alloc] init];
     }
     
+    _cinstance->_clientUdpSocket = [[AsyncUdpSocket alloc] initWithDelegate:_cinstance];
     _cinstance->_clientSocket = [[AsyncSocket alloc] initWithDelegate:_cinstance];
     
     return _cinstance;
@@ -173,9 +175,6 @@ static WZZSocketClientManager *_cinstance;
 
 //写数据
 - (void)onSocket:(AsyncSocket *)sock didWriteDataWithTag:(long)tag {
-    if (_logMessageBlock) {
-        _logMessageBlock([NSString stringWithFormat:@"写数据"]);
-    }
     NSLog(@"写数据");
 }
 

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		713478661EE2A1CA0072BD4A /* WZZMotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 713478651EE2A1CA0072BD4A /* WZZMotionManager.m */; };
 		71C99A2E1EE2931000CA476E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C99A2D1EE2931000CA476E /* main.m */; };
 		71C99A311EE2931000CA476E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C99A301EE2931000CA476E /* AppDelegate.m */; };
 		71C99A341EE2931000CA476E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C99A331EE2931000CA476E /* ViewController.m */; };
@@ -18,6 +17,8 @@
 		71C99A521EE2931100CA476E /* WZZSwordRemoteUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C99A511EE2931100CA476E /* WZZSwordRemoteUITests.m */; };
 		71C99A641EE2934100CA476E /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C99A611EE2934100CA476E /* AsyncSocket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		71C99A651EE2934100CA476E /* WZZSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C99A631EE2934100CA476E /* WZZSocketManager.m */; };
+		71DC382C1EE65BD1005541A5 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DC382B1EE65BD1005541A5 /* AsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		71DC382F1EE66A15005541A5 /* WZZMotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DC382E1EE66A15005541A5 /* WZZMotionManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +39,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		713478641EE2A1CA0072BD4A /* WZZMotionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZZMotionManager.h; sourceTree = "<group>"; };
-		713478651EE2A1CA0072BD4A /* WZZMotionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZZMotionManager.m; sourceTree = "<group>"; };
 		71C99A291EE2931000CA476E /* WZZSwordRemote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WZZSwordRemote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C99A2D1EE2931000CA476E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		71C99A2F1EE2931000CA476E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -60,6 +59,10 @@
 		71C99A611EE2934100CA476E /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
 		71C99A621EE2934100CA476E /* WZZSocketManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZZSocketManager.h; sourceTree = "<group>"; };
 		71C99A631EE2934100CA476E /* WZZSocketManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZZSocketManager.m; sourceTree = "<group>"; };
+		71DC382A1EE65BD1005541A5 /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
+		71DC382B1EE65BD1005541A5 /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
+		71DC382D1EE66A15005541A5 /* WZZMotionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZZMotionManager.h; sourceTree = "<group>"; };
+		71DC382E1EE66A15005541A5 /* WZZMotionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZZMotionManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +93,8 @@
 		713478631EE2A1CA0072BD4A /* MotionTool */ = {
 			isa = PBXGroup;
 			children = (
-				713478641EE2A1CA0072BD4A /* WZZMotionManager.h */,
-				713478651EE2A1CA0072BD4A /* WZZMotionManager.m */,
+				71DC382D1EE66A15005541A5 /* WZZMotionManager.h */,
+				71DC382E1EE66A15005541A5 /* WZZMotionManager.m */,
 			);
 			path = MotionTool;
 			sourceTree = "<group>";
@@ -163,6 +166,8 @@
 		71C99A5F1EE2934100CA476E /* SocketTool */ = {
 			isa = PBXGroup;
 			children = (
+				71DC382A1EE65BD1005541A5 /* AsyncUdpSocket.h */,
+				71DC382B1EE65BD1005541A5 /* AsyncUdpSocket.m */,
 				71C99A601EE2934100CA476E /* AsyncSocket.h */,
 				71C99A611EE2934100CA476E /* AsyncSocket.m */,
 				71C99A621EE2934100CA476E /* WZZSocketManager.h */,
@@ -238,7 +243,7 @@
 				TargetAttributes = {
 					71C99A281EE2931000CA476E = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = L3EKEXQ8PC;
+						DevelopmentTeam = GMLKLDG682;
 						ProvisioningStyle = Automatic;
 					};
 					71C99A411EE2931100CA476E = {
@@ -309,8 +314,9 @@
 				71C99A311EE2931000CA476E /* AppDelegate.m in Sources */,
 				71C99A2E1EE2931000CA476E /* main.m in Sources */,
 				71C99A641EE2934100CA476E /* AsyncSocket.m in Sources */,
+				71DC382F1EE66A15005541A5 /* WZZMotionManager.m in Sources */,
 				71C99A651EE2934100CA476E /* WZZSocketManager.m in Sources */,
-				713478661EE2A1CA0072BD4A /* WZZMotionManager.m in Sources */,
+				71DC382C1EE65BD1005541A5 /* AsyncUdpSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,10 +463,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = L3EKEXQ8PC;
+				DEVELOPMENT_TEAM = GMLKLDG682;
 				INFOPLIST_FILE = WZZSwordRemote/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wzz.WZZSwordRemote;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wzz.normal2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -469,10 +476,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = L3EKEXQ8PC;
+				DEVELOPMENT_TEAM = GMLKLDG682;
 				INFOPLIST_FILE = WZZSwordRemote/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wzz.WZZSwordRemote;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wzz.normal2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

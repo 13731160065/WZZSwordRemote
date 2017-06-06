@@ -23,6 +23,11 @@
 @property (assign, nonatomic) BOOL openA;
 
 /**
+ 手机方向
+ */
+@property (nonatomic, assign) BOOL openAcc;
+
+/**
  陀螺仪
  */
 @property (assign, nonatomic) BOOL openXYZ;
@@ -53,12 +58,17 @@
 @interface WZZMotionModel : NSObject
 
 /**
- 加速度
+ 手机方向
  */
-@property (assign, nonatomic) CMAcceleration a;
+@property (assign, nonatomic) CMAcceleration acc;
 
 /**
- 陀螺仪
+ 空间加速度
+ */
+@property (nonatomic, assign) CMAcceleration a;
+
+/**
+ 角速度
  */
 @property (assign, nonatomic) CMRotationRate xyz;
 

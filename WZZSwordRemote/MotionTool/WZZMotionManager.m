@@ -45,9 +45,9 @@ static WZZMotionManager *_instance;
 }
 
 #pragma mark - 属性
-- (void)setOpenA:(BOOL)openA {
-    if (_openA != openA) {
-        _openA = openA;
+- (void)setOpenAcc:(BOOL)openAcc {
+    if (_openAcc != openAcc) {
+        _openAcc = openAcc;
     }
     if (_openA) {
         //开启加速度更新
@@ -55,6 +55,19 @@ static WZZMotionManager *_instance;
     } else {
         //关闭加速度更新
         [manager stopAccelerometerUpdates];
+    }
+}
+
+- (void)setOpenA:(BOOL)openA {
+    if (_openA != openA) {
+        _openA = openA;
+    }
+    if (_openA) {
+        //开启加速度更新
+        [manager startDeviceMotionUpdates];
+    } else {
+        //关闭加速度更新
+        [manager startDeviceMotionUpdates];
     }
 }
 
@@ -104,8 +117,17 @@ static WZZMotionManager *_instance;
 
 //刷新数据
 - (void)updateData {
+    if (_openAcc) {
+        _dataModel.acc = manager.accelerometerData.acceleration;
+    } else {
+        CMAcceleration b;
+        b.x = 0;
+        b.y = 0;
+        b.z = 0;
+        _dataModel.acc = b;
+    }
     if (_openA) {
-        _dataModel.a = manager.accelerometerData.acceleration;
+        _dataModel.a = manager.deviceMotion.userAcceleration;
     } else {
         CMAcceleration b;
         b.x = 0;

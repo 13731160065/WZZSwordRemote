@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AsyncUdpSocket.h"
 #import "AsyncSocket.h"
 
-@interface WZZSocketServerManager : NSObject<AsyncSocketDelegate>
+@interface WZZSocketServerManager : NSObject<AsyncSocketDelegate, AsyncUdpSocketDelegate>
 
 @property (nonatomic, strong) AsyncSocket * serverSocket;
+@property (nonatomic, strong) AsyncUdpSocket * severUdpSocket;
 
 /**
  服务端单例
@@ -25,9 +27,10 @@
 
 @end
 
-@interface WZZSocketClientManager : NSObject<AsyncSocketDelegate>
+@interface WZZSocketClientManager : NSObject<AsyncSocketDelegate, AsyncUdpSocketDelegate>
 
 @property (nonatomic, strong) AsyncSocket * clientSocket;
+@property (nonatomic, strong) AsyncUdpSocket * clientUdpSocket;
 
 /**
  客户端单例
