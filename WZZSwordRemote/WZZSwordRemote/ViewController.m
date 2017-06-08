@@ -9,16 +9,13 @@
 #import "ViewController.h"
 #import "WZZSocketManager.h"
 #import "WZZMotionManager.h"
+#import "WZZConnectVC.h"
 #import <ifaddrs.h>
 #import <arpa/inet.h>
-@import CoreMotion;
 @import SystemConfiguration;
 
 @interface ViewController ()
-{
-    WZZSocketClientManager * clientManager;
-    WZZMotionManager * motionManager;
-}
+
 @property (weak, nonatomic) IBOutlet UIButton *conButton;
 @property (weak, nonatomic) IBOutlet UIButton *testButton;
 @property (weak, nonatomic) IBOutlet UITextField *severIP;
@@ -32,24 +29,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [_conButton.layer setMasksToBounds:YES];
-    [_conButton.layer setCornerRadius:10];
+    [_conButton.layer setCornerRadius:5];
     [_testButton.layer setMasksToBounds:YES];
-    [_testButton.layer setCornerRadius:10];
-    motionManager = [WZZMotionManager sharedWZZMotionManager];
-    motionManager.openA = YES;
-    motionManager.openXYZ = YES;
+    [_testButton.layer setCornerRadius:5];
+    [_msgTextView.layer setMasksToBounds:YES];
+    [_msgTextView.layer setCornerRadius:5];
     
-    [motionManager startUpdateWithReturnModel:^(WZZMotionModel *dataModel) {
-        [self sendStringWithDic:@{
-                                  @"a":@{@"x":@(dataModel.a.x), @"y":@(dataModel.a.y), @"z":@(dataModel.a.z)},
-                                  @"xyz":@{@"x":@(dataModel.xyz.x), @"y":@(dataModel.xyz.y), @"z":@(dataModel.xyz.z)},
-                                  }];
-    }];
-    clientManager = [WZZSocketClientManager sharedClientManager];
-    [clientManager logMessage:^(NSString *msg) {
-        [self logMessage:msg];
-    }];
-    NSLog(@"ip:%@", [self getIPAddress]);
+    [self logMessage:[NSString stringWithFormat:@"本机ip:%@", [self getIPAddress]]];
+    [self logMessage:@"1.点“连接”前，请保持手机与地表呈竖直状态，点击连接5秒后将进入连接状态!"];
+    [self logMessage:@"2.点击“校对陀螺仪”前，请先将手机放置于一个稳定物体表面，不要有任何晃动和位移，否则将导致不可预计的后果!"];
+    [self logMessage:@"3.没什么意外的话端口默认38080"];
+}
+
+- (void)tvScrollToEnd {
+    [_msgTextView scrollRangeToVisible:NSMakeRange(_msgTextView.text.length, 1)];
 }
 
 //获取WIFIIP的方法
@@ -84,43 +77,32 @@
     return address;
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [_severIP resignFirstResponder];
+    [_severPort resignFirstResponder];
+}
+
 - (IBAction)testClick:(id)sender {
-    [self sendStringWithDic:@{@"msg":@"hello world"}];
+    
 }
 
 - (IBAction)conClick:(id)sender {
     if ([_severIP.text isEqualToString:@""] || [_severPort.text isEqualToString:@""]) {
+        [self logMessage:@"把ip和端口填写完整"];
         return;
     }
-    [clientManager connectServerWithHost:_severIP.text port:_severPort.text];
-}
-
-- (void)sendStringWithDic:(NSDictionary *)dic {
-    NSString * str = [self jsonFromObject:dic];
-    if (str) {
-        [clientManager sendString:str];
-    }
+    WZZConnectVC * vc = [[self storyboard] instantiateViewControllerWithIdentifier:@"WZZConnectVC"];
+    vc.severIP = _severIP.text;
+    vc.severPort = _severPort.text;
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (void)logMessage:(NSString *)str {
     if (str) {
         str = [@"\n" stringByAppendingString:str];
         _msgTextView.text = [_msgTextView.text stringByAppendingString:str];
+        [self tvScrollToEnd];
     }
-}
-
-//对象转json
-- (NSString *)jsonFromObject:(id)obj {
-    if (obj == nil) {
-        return nil;
-    }
-    NSError * err;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:obj options:0 error:&err];
-    if(err) {
-        NSLog(@"json解析失败：%@",err);
-        return nil;
-    }
-    return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
 }
 
 @end

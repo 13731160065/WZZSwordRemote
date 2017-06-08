@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 @import CoreMotion;
+@import SceneKit;
 @class WZZMotionModel;
 
 @interface WZZMotionManager : NSObject
@@ -52,10 +53,25 @@
  */
 - (void)stopUpdate;
 
+/**
+ 重置方位和旋转
+ */
+- (void)resetDataModelPR;
+
 @end
 
 
 @interface WZZMotionModel : NSObject
+
+/**
+ 旋转
+ */
+@property (nonatomic, assign) SCNVector3 rotation;
+
+/**
+ 空间位置
+ */
+@property (nonatomic, assign) SCNVector3 position;
 
 /**
  手机方向

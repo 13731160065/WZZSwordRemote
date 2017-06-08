@@ -7,6 +7,7 @@
 //
 
 #import "WZZMotionManager.h"
+#define SIMMODE 1//模拟器模式，关闭纸盒
 
 static WZZMotionManager *_instance;
 
@@ -95,6 +96,15 @@ static WZZMotionManager *_instance;
         //关闭磁感应更新
         [manager stopMagnetometerUpdates];
     }
+}
+
+- (void)resetDataModelPR {
+#if SIMMODE
+    _dataModel.position = SCNVector3Make(0, 4, -5);
+#else
+    _dataModel.position = SCNVector3Make(0, 0, 0);
+#endif
+    _dataModel.rotation = SCNVector3Make(0, 0, 0);
 }
 
 #pragma mark - 方法

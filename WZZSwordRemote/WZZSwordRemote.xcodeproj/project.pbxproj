@@ -19,6 +19,7 @@
 		71C99A651EE2934100CA476E /* WZZSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C99A631EE2934100CA476E /* WZZSocketManager.m */; };
 		71DC382C1EE65BD1005541A5 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DC382B1EE65BD1005541A5 /* AsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		71DC382F1EE66A15005541A5 /* WZZMotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DC382E1EE66A15005541A5 /* WZZMotionManager.m */; };
+		71FF4D6C1EE7D68A0007CC00 /* WZZConnectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FF4D6B1EE7D68A0007CC00 /* WZZConnectVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		71DC382B1EE65BD1005541A5 /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
 		71DC382D1EE66A15005541A5 /* WZZMotionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZZMotionManager.h; sourceTree = "<group>"; };
 		71DC382E1EE66A15005541A5 /* WZZMotionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZZMotionManager.m; sourceTree = "<group>"; };
+		71FF4D6A1EE7D68A0007CC00 /* WZZConnectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZZConnectVC.h; sourceTree = "<group>"; };
+		71FF4D6B1EE7D68A0007CC00 /* WZZConnectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZZConnectVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,8 @@
 				71C99A301EE2931000CA476E /* AppDelegate.m */,
 				71C99A321EE2931000CA476E /* ViewController.h */,
 				71C99A331EE2931000CA476E /* ViewController.m */,
+				71FF4D6A1EE7D68A0007CC00 /* WZZConnectVC.h */,
+				71FF4D6B1EE7D68A0007CC00 /* WZZConnectVC.m */,
 				71C99A351EE2931000CA476E /* Main.storyboard */,
 				71C99A381EE2931000CA476E /* Assets.xcassets */,
 				71C99A3A1EE2931000CA476E /* LaunchScreen.storyboard */,
@@ -243,7 +248,7 @@
 				TargetAttributes = {
 					71C99A281EE2931000CA476E = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = GMLKLDG682;
+						DevelopmentTeam = L3EKEXQ8PC;
 						ProvisioningStyle = Automatic;
 					};
 					71C99A411EE2931100CA476E = {
@@ -317,6 +322,7 @@
 				71DC382F1EE66A15005541A5 /* WZZMotionManager.m in Sources */,
 				71C99A651EE2934100CA476E /* WZZSocketManager.m in Sources */,
 				71DC382C1EE65BD1005541A5 /* AsyncUdpSocket.m in Sources */,
+				71FF4D6C1EE7D68A0007CC00 /* WZZConnectVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,11 +469,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = GMLKLDG682;
+				DEVELOPMENT_TEAM = L3EKEXQ8PC;
 				INFOPLIST_FILE = WZZSwordRemote/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wzz.normal2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wzz.WZZSwordRemote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -476,11 +482,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = GMLKLDG682;
+				DEVELOPMENT_TEAM = L3EKEXQ8PC;
 				INFOPLIST_FILE = WZZSwordRemote/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wzz.normal2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wzz.WZZSwordRemote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
