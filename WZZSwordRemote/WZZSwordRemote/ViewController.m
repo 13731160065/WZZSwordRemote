@@ -15,6 +15,15 @@
 @import SystemConfiguration;
 
 @interface ViewController ()
+{
+    int testN;
+    double testX;
+    double testY;
+    double testZ;
+    double testAX;
+    double testAY;
+    double testAZ;
+}
 
 @property (weak, nonatomic) IBOutlet UIButton *conButton;
 @property (weak, nonatomic) IBOutlet UIButton *testButton;
@@ -83,7 +92,69 @@
 }
 
 - (IBAction)testClick:(id)sender {
+    //修复自动偏移
+    [self logMessage:@"开始校验，请不要动手机"];
     
+    for (int i = 0; i < 5; i++) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(i * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self logMessage:[NSString stringWithFormat:@"倒计时%d秒", 5-i]];
+        });
+    }
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [WZZMotionManager sharedWZZMotionManager].openA = NO;
+        [WZZMotionManager sharedWZZMotionManager].openXYZ = NO;
+        [[WZZMotionManager sharedWZZMotionManager] stopUpdate];
+        
+        //计算误差
+        double fixX = testX/testN;
+        double fixY = testY/testN;
+        double fixZ = testZ/testN;
+        
+        double fixAX = testAX/testN;
+        double fixAY = testAY/testN;
+        double fixAZ = testAZ/testN;
+        
+        [[NSUserDefaults standardUserDefaults] setObject:@{@"fx":@(fixX), @"fy":@(fixY), @"fz":@(fixZ), @"fax":@(fixAX), @"fay":@(fixAY), @"faz":@(fixAZ)} forKey:@"fixvalue"];
+        
+        [self logMessage:[NSString stringWithFormat:@"校验完毕，校验时间5秒，校验次数%d次", testN]];
+        [self logMessage:@"修复值为:"];
+        [self logMessage:@"--加速度--"];
+        [self logMessage:[NSString stringWithFormat:@"x:%lf", fixX]];
+        [self logMessage:[NSString stringWithFormat:@"y:%lf", fixY]];
+        [self logMessage:[NSString stringWithFormat:@"z:%lf", fixZ]];
+        [self logMessage:@"--角速度--"];
+        [self logMessage:[NSString stringWithFormat:@"x:%lf", fixAX]];
+        [self logMessage:[NSString stringWithFormat:@"y:%lf", fixAY]];
+        [self logMessage:[NSString stringWithFormat:@"z:%lf", fixAZ]];
+        
+        testX = 0;
+        testY = 0;
+        testZ = 0;
+        testAX = 0;
+        testAY = 0;
+        testAZ = 0;
+        testN = 0;
+    });
+    
+    [WZZMotionManager sharedWZZMotionManager].openA = YES;
+    [WZZMotionManager sharedWZZMotionManager].openXYZ = YES;
+    [[WZZMotionManager sharedWZZMotionManager] startUpdateWithReturnModel:^(WZZMotionModel *dataModel) {
+        double xx = dataModel.a.x;
+        double yy = dataModel.a.y;
+        double zz = dataModel.a.z;
+        testAX+=xx;
+        testAY+=yy;
+        testAZ+=zz;
+        
+        double ax = dataModel.xyz.x;
+        double ay = dataModel.xyz.y;
+        double az = dataModel.xyz.z;
+        testX+=ax;
+        testY+=ay;
+        testZ+=az;
+        
+        testN++;
+    }];
 }
 
 - (IBAction)conClick:(id)sender {

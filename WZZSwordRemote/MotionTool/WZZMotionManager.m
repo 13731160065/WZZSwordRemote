@@ -52,6 +52,7 @@ static WZZMotionManager *_instance;
     }
     if (_openA) {
         //开启加速度更新
+        [manager setAccelerometerUpdateInterval:0.1];
         [manager startAccelerometerUpdates];
     } else {
         //关闭加速度更新
@@ -65,6 +66,7 @@ static WZZMotionManager *_instance;
     }
     if (_openA) {
         //开启加速度更新
+        [manager setDeviceMotionUpdateInterval:0.1];
         [manager startDeviceMotionUpdates];
     } else {
         //关闭加速度更新
@@ -78,6 +80,7 @@ static WZZMotionManager *_instance;
     }
     if (_openXYZ) {
         //开启陀螺仪更新
+        [manager setGyroUpdateInterval:0.1];
         [manager startGyroUpdates];
     } else {
         //关闭陀螺仪更新
@@ -91,6 +94,7 @@ static WZZMotionManager *_instance;
     }
     if (_openNS) {
         //开启磁感应更新
+        [manager setMagnetometerUpdateInterval:0.1];
         [manager startMagnetometerUpdates];
     } else {
         //关闭磁感应更新
@@ -146,7 +150,7 @@ static WZZMotionManager *_instance;
         _dataModel.a = b;
     }
     if (_openXYZ) {
-        _dataModel.xyz = manager.gyroData.rotationRate;
+        _dataModel.xyz = manager.deviceMotion.rotationRate;
     } else {
         CMRotationRate b;
         b.x = 0;

@@ -30,7 +30,7 @@
     [_backButton.layer setMasksToBounds:YES];
     [_backButton.layer setCornerRadius:5];
     [self setup];
-    [self logMessage:@"请保持手机与地表呈竖直状态，马上建立连接倒计时5秒"];
+    [self logMessage:@"请保持手机与地表呈竖直状态，马上建立连接"];
     for (int i = 0; i < 5; i++) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(i * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self logMessage:[NSString stringWithFormat:@"倒计时%d秒", 5-i]];
@@ -52,11 +52,21 @@
     motionManager.openXYZ = YES;
     [motionManager resetDataModelPR];
     [motionManager startUpdateWithReturnModel:^(WZZMotionModel *dataModel) {
-        float rPix = 0.1;
+        float rPix = 0.1;//
         //修复自动偏移
-        float xFix = 0.005104;
-        float yFix = 0.002498;
-        float zFix = 0.001521;
+//        float xFix = 0.005104;
+//        float yFix = 0.002498;
+//        float zFix = 0.001521;
+        
+        float xFix = 0;
+        float yFix = 0;
+        float zFix = 0;
+        NSDictionary * fixDic = [[NSUserDefaults standardUserDefaults] objectForKey:@"fixvalue"];
+        if (fixDic) {
+            xFix = [fixDic[@"fx"] floatValue]*rPix;
+            yFix = [fixDic[@"fy"] floatValue]*rPix;
+            zFix = [fixDic[@"fz"] floatValue]*rPix;
+        }
         
         CGFloat x = dataModel.rotation.x+dataModel.xyz.x*rPix+xFix;//加速度值为弧度/秒，乘0.1是0.1秒的
         CGFloat y = dataModel.rotation.y+dataModel.xyz.y*rPix+yFix;
@@ -64,9 +74,19 @@
         
         float aPix = 0;
         //修复自动偏移
-        float xxFix = 0.000044;
-        float yyFix = 0.000066;
-        float zzFix = -0.003074;
+//        float xxFix = 0.000044;
+//        float yyFix = 0.000066;
+//        float zzFix = -0.003074;
+        
+        float xxFix = 0;
+        float yyFix = 0;
+        float zzFix = 0;
+        if (fixDic) {
+            xxFix = [fixDic[@"fax"] floatValue]*aPix;
+            yyFix = [fixDic[@"fay"] floatValue]*aPix;
+            zzFix = [fixDic[@"faz"] floatValue]*aPix;
+        }
+        
         CGFloat xx = dataModel.position.x+dataModel.a.x*aPix+xxFix;
         CGFloat yy = dataModel.position.y+dataModel.a.y*aPix+yyFix;
         CGFloat zz = dataModel.position.z+dataModel.a.z*aPix+zzFix;
@@ -78,15 +98,6 @@
                                   @"a":@{@"x":@(xx), @"y":@(yy), @"z":@(zz)},
                                   @"xyz":@{@"x":@(x), @"y":@(y), @"z":@(z)},
                                   }];
-        //            if (testN < 100) {
-        //                testX+=xx;
-        //                testY+=yy;
-        //                testZ+=zz;
-        //                if (testN == 99) {
-        //                    NSLog(@"%f, %f, %f", testX/100, testY/100, testZ/100);
-        //                }
-        //                testN++;
-        //            }
     }];
     clientManager = [WZZSocketClientManager sharedClientManager];
     [clientManager logMessage:^(NSString *msg) {
