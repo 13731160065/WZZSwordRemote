@@ -1,0 +1,14 @@
+//
+//  PrefixHeader.pch
+//  WZZSwordRemote
+//
+//  Created by 王泽众 on 2017/7/6.
+//  Copyright © 2017年 wzz. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#define USEATT 0//使用加速度？加速度:pitch yew roll
+
+#endif /* PrefixHeader_pch */

@@ -150,7 +150,29 @@ static WZZMotionManager *_instance;
         _dataModel.a = b;
     }
     if (_openXYZ) {
-        _dataModel.xyz = manager.deviceMotion.rotationRate;
+#if USEATT
+        CMRotationRate rr = manager.deviceMotion.rotationRate;
+        if (manager.accelerometerData.acceleration.z < 0) {
+            
+        }
+        _dataModel.xyz = rr;
+#else
+        CMRotationRate rr;
+        CMAttitude * att = manager.deviceMotion.attitude;
+        if (manager.accelerometerData.acceleration.z < 0) {
+            //手机正面朝上
+            rr.x = (att.pitch)-M_PI_2;
+            rr.y = att.yaw;
+//            rr.z = att.roll;
+        } else {
+            //手机正面朝下
+            rr.x = M_PI+(M_PI-att.pitch)-M_PI_2;
+            rr.y = M_PI+(M_PI-att.yaw);
+//            rr.z = M_PI+(M_PI-att.roll);
+        }
+        rr.z = att.roll;
+        _dataModel.xyz = rr;
+#endif
     } else {
         CMRotationRate b;
         b.x = 0;

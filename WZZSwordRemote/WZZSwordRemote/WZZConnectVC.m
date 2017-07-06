@@ -50,6 +50,7 @@
     motionManager = [WZZMotionManager sharedWZZMotionManager];
     motionManager.openA = YES;
     motionManager.openXYZ = YES;
+    motionManager.openAcc = YES;
     [motionManager resetDataModelPR];
     [motionManager startUpdateWithReturnModel:^(WZZMotionModel *dataModel) {
         float rPix = 0.1;//
@@ -90,8 +91,11 @@
         CGFloat xx = dataModel.position.x+dataModel.a.x*aPix+xxFix;
         CGFloat yy = dataModel.position.y+dataModel.a.y*aPix+yyFix;
         CGFloat zz = dataModel.position.z+dataModel.a.z*aPix+zzFix;
-        
+#if USEATT
         dataModel.rotation = SCNVector3Make(x, y, z);
+#else
+        dataModel.rotation = SCNVector3Make(dataModel.xyz.x, dataModel.xyz.y, dataModel.xyz.z);
+#endif
         dataModel.position = SCNVector3Make(xx, yy, zz);
         
         [self sendStringWithDic:@{
